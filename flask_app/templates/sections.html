@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MAD Music</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.2em;
+            color: #222;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2em auto;
+            color: #555;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .spotify {
+            background-color: #96fa72;
+            border: 2px solid #50bf54;
+            color: #fdfdfd;
+        }
+
+        .spotify:hover {
+            background-color: #6adc65;
+            border-color: #396c33;
+            transform: translateY(-2px);
+        }
+
+        .itunes {
+            background-color: #5db1a2;
+            border: 2px solid #499a8d;
+            color: #fdfdfd;
+        }
+
+        .itunes:hover {
+            background-color: #428e7a;
+            border-color: #356858;
+            transform: translateY(-2px);
+        }
+
+        .apple_music {
+            background-color: #fa84ab;
+            border: 2px solid #c36eaa;
+            color: #fdfdfd;
+        }
+
+        .apple_music:hover {
+            background-color: #ec639a;
+            border-color: #a85874;
+            transform: translateY(-2px);
+        }
+
+        .youtube {
+            background-color: #fa7474;
+            border: 2px solid #f63f3f;
+            color: #fdfdfd;
+        }
+
+        .youtube:hover {
+            background-color: #c53f3f;
+            border-color: #652222;
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #444;
+            border: 1px solid #ccc;
+            padding: 8px 14px;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            transition: background-color 0.2s;
+        }
+
+        .back-button:hover {
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sections</h1>
+        <p>
+            On this page, you can find analysis of the most popular songs and artists. The data were taken
+            from the best music streaming services and divided into separate sections. Each one has its interesting
+            features and collects different kinds of information. Let`s explore!
+        </p>
+        <div class="buttons">
+            <a class="button spotify" href="/sections/spotify">Spotify</a>
+            <a class="button itunes" href="/sections/itunes">iTunes</a>
+            <a class="button apple_music" href="/sections/apple_music">Apple Music</a>
+            <a class="button youtube" href="/sections/radio_youtube">Radio and YouTube</a>
+        </div>
+        <a href="/" class="back-button">← Back to Home</a>
+    </div>
+</body>
+</html>

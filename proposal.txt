@@ -1,0 +1,30 @@
+The main goal of the project is analyzing the music trends and gathering the statistics of the most popular
+artists/bands over the time.
+
+1. Acquiring data:
+The data will be parsed mostly from three webpages listed below:
+- https://kworb.net/ - the warehouse of all the statistics about artists taken from the most popular music
+services. It also has archive data so the analysis is possible.
+- https://www.everynoise.com/,
+https://www.aaemusic.com/browse-artists-by-genre/,
+https://en.wikipedia.org/wiki/Category:Lists_of_musicians_by_genre -
+these sites will be used to analyze the data based on music genres. The dependencies we observe should also
+be influenced by the genre we consider. There is no some ideal source with all the data that will be used because
+the data about music genres is difficult to maintain and actualize so the final dataset probably will be
+constructed from different parts.
+
+Probably, the data parsing will be done by using Python and its parsers like Beautiful Soup, etc. The final
+result should be saved as csv file because it is easier to process.
+
+2. Preprocessing data to a suitable form:
+- Use some Python libraries (pandas, numpy, scipy) to put all the files together, preprocess the data,
+work with bad inputs, and compute the basic statistics. The dataset will be saved as a csv file.
+- Create a database (and its schema) using sqlite3 and csv files. Probably, the database will consist of three
+tables keeping the information about the artists, music genres and the main one with all the statistics.
+
+3. Further analyses and data visualization:
+- The visualizations describing dependencies between music genres and the number of listeners, some artist`s
+popularity trend, differences between music services (probably, different recommendation systems will cause
+some changes in chart positions) will be shown either via basic Python visualization tools
+(matplotlib, seaborn, plotly) or on some simple Flask application with the option to check the particular
+artist`s stats.

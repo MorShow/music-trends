@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAD Music</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 30px;">
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>First graph:</strong> Z-distribution of the artist's popularity in a particular region. It was evaluated
+            as a ratio of total (sum of all streams) number of streams of a singer over the overall number of streams
+            thorough all the artists inside this region. Then the corresponding Z-values were created from these ratios.
+            Logarithmic transformation is used to create steadier distribution (but even so it's still right-skewed,
+            there are some artists that far away from the rest, which is quite expected for the music industry nowadays).
+        </p>
+    </div>
+    <div id="plot" style="width: 80%; margin: auto;"></div>
+    <script>
+        const plotData = {{ graphs[0] | tojson }};
+        Plotly.newPlot('plot', plotData.data, plotData.layout);
+    </script>
+
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>Second graph:</strong> Treemap describing share of each artist's track from the total number of streams.
+            We can see that very often the artist has one-two "bangers" who make him very popular. But also there are very
+            "stable" artists with lots of equally popular tracks. The graph is quite interesting: we can get to know
+            the musician or band much better it we look at it!
+        </p>
+    </div>
+    <div id="plot2" style="width: 80%; margin: auto; height: 700px;"></div>
+    <script>
+        const plotData2 = {{ graphs[1] | tojson }};
+        Plotly.newPlot('plot2', plotData2.data, plotData2.layout);
+    </script>
+
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>Third graph:</strong> How much does it depend on featuring with another artist? Does it make
+            a musician any popular? Of course. Here you can see how much "traffic" they get collaborating with others,
+            and who gets popular on his own the most. The figures are divided into 10-artists batches
+            to compare only equally popular ones and not to overwhelm the bar plots.
+        </p>
+    </div>
+    <div id="plot3" style="width: 80%; margin: auto; height: 700px;"></div>
+    <script>
+        const plotData3 = {{ graphs[2] | tojson }};
+        Plotly.newPlot('plot3', plotData3.data, plotData3.layout);
+    </script>
+    <a href="/" style="text-decoration: none; color: #555;">⬅ Back to Home</a>
+</body>
+</html>

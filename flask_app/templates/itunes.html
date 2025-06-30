@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAD Music</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 30px;">
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>First graph:</strong> It is a timeline of your favourite album. The iTunes usually shares
+            only sells information, so it's quite difficult to estimate the popularity of new music using this service.
+            But there are some rankings and data libraries somehow trying to resolve this. For instance, kworb.net
+            created a new way to assess the album/song's popularity based on the regional specifics. There are
+            100+ countries for which it is possible to estimate the popularity of the song. They were divided
+            into four groups based on some consumption factors. Then these values are combined creating
+            a final 'Points' feature creating this ranking. The figure represents this rating. You can choose
+            the album from the list of the most popular ones and observe the tendencies.<br><br>
+
+            <strong>* The values and albums are from 2014.</strong>
+        </p>
+    </div>
+    <div id="plot" style="width: 80%; height: 600px; margin: auto;"></div>
+    <script>
+        const plotData = {{ graphs[0] | tojson }};
+        Plotly.newPlot('plot', plotData.data, plotData.layout);
+    </script>
+
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>Second graph:</strong> The graph is showing how preferences differ
+            from country to country. As a baseline was taken Slovakia. The results are shown
+            on the top 10 most popular tracks for 2011–nowadays (based on aggregated sales values
+            for this period).
+        </p>
+    </div>
+    <div id="plot2" style="width: 80%; margin: auto; height: 700px;"></div>
+    <script>
+        const plotData2 = {{ graphs[1] | tojson }};
+        Plotly.newPlot('plot2', plotData2.data, plotData2.layout);
+    </script>
+    <div id="plot3" style="width: 80%; margin: auto; height: 700px;"></div>
+    <script>
+        const plotData3 = {{ graphs[2] | tojson }};
+        Plotly.newPlot('plot3', plotData3.data, plotData3.layout);
+    </script>
+    <a href="/" style="text-decoration: none; color: #555;">⬅ Back to Home</a>
+</body>
+</html>

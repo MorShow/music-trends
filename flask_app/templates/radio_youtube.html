@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAD Music</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 30px;">
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>First graph:</strong> Does the popularity of some music depend on time periods/seasons?
+            You can check it looking at this graph. It describes the most popular artists and how much
+            their popularity depends on actual month.
+            The radio was chosen as the main source. To my mind, it is affected by seasons of the year
+            the most.
+        </p>
+    </div>
+    <div id="plot" style="width: 80%; height: 600px; margin: auto;"></div>
+    <script>
+        const plotData = {{ graphs[0] | tojson }};
+        Plotly.newPlot('plot', plotData.data, plotData.layout);
+    </script>
+
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>Second graph:</strong> YouTube video clips versus Spotify songs. Who does get more traffic?
+            Of course, it was quite expected that the latter, but there are interesting occasions when
+            the video was even more popular than the track. It also depends on the date when a clip was published
+            because the music services were not developed as well as video services at some point of time.
+        </p>
+    </div>
+    <div id="plot2" style="width: 80%; height: 600px; margin: auto;"></div>
+    <script>
+        const plotData2 = {{ graphs[1] | tojson }};
+        Plotly.newPlot('plot2', plotData2.data, plotData2.layout);
+    </script>
+
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>Third graph:</strong> How popular some video clips remain today? Does it depend on
+            publication date? Check it. The figures for each year from 2010 (and earlier) to 2023 will probably
+            help you to figure this out!
+        </p>
+    </div>
+    <div id="plot3" style="width: 80%; height: 600px; margin: auto;"></div>
+    <script>
+        const plotData3 = {{ graphs[2] | tojson }};
+        Plotly.newPlot('plot3', plotData3.data, plotData3.layout);
+    </script>
+
+    <a href="/" style="text-decoration: none; color: #555;">⬅ Back to Home</a>
+</body>
+</html>

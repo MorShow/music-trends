@@ -1,0 +1,6 @@
+Some explanations to the iTunes data:
+
+1.
+- Header = number of hours ago
+- Question marks = possibly incorrect update
+- Dollar sign = discounted

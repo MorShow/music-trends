@@ -1,0 +1,71 @@
+PROTOCOL
+Data Management Project
+Author: Oleksandr Kasat
+
+SUBMITTED FILES
+
+1. scripts directory:
+- parser.py – Launches a Selenium-based parser that crawls kworb.net to collect various statistics from music services.
+- data_processing.ipynb (probably, should be transformed to data_processing.py
+-> jupyter nbconvert --to script scripts/data_processing.ipynb) - Contains data manipulation steps
+such as cleaning, filling missing values, concatenation, and creating a new batch of CSV files.
+- database_creation.py – Creates a database (database.db). All graph-related scripts are connected to this database.
+- graphs_creation_apple_music.py, graphs_creation_itunes.py, graphs_creation_radio_youtube.py,
+ graphs_creation_spotify.py – These scripts generate graphs. Because connecting to a large database and generating
+ a graph dynamically during page visits is inefficient, the graphs are pre-generated
+ and saved to the /flask_app/static/figures/ directory.
+- database_check.py – A utility script for checking the names of the tables in the created database.
+2. constants.py – A set of constants used to control which batch of data should be loaded and processed.
+3. flask_app directory:
+- sections/routes.py – A Flask blueprint for routing the "Sections" part of the webpage, showing graphs related to each music service.
+- static/figures directory – Contains the pre-generated graphs in JSON format:
+spotify1/2/3.json, itunes1/2.json, apple_music1/2.json, radio_youtube1/2/3.json
+- templates directory – Contains Jinja2 templates for rendering webpage sections.
+- app.py – The main Flask web application.
+- database.db – The SQLite database used by the application.
+4. data directory:
+- raw directory – Contains raw data parsed from kworb.net.
+- Important data tables include:
+spotify_charts_daily.csv, spotify_charts_weekly.csv, spotify_artists.csv, spotify_listeners.csv, spotify_top_lists.csv,
+itunes_archive_united_states.csv, itunes_cumulative_united_states.csv, archive_albums.csv, archive_songs.csv,
+radio_charts_archive.csv, youtube_clips_overall.csv
+
+DATA ANALYSIS
+- The main goal of this project was to create graphs that explore how different cultures, time periods, and social
+changes influence the popularity of music in specific regions and globally. Although initial expectations suggested
+strong cultural differences, the results revealed that globalization and consumer behavior have had a major effect
+on musical trends. But some interesting correlations were identified, described within the Flask application,
+and will be further analyzed in the accompanying report.
+- So, the sequence of steps is quite simple:
+1. Clean the data and prepare it for deeper analysis.
+2. Create visualizations that highlight interesting facts or trends.
+3. Deploy the graphs to the web application and describe it in attractive to the potential user way,
+make him thinking on it (at least for few seconds).
+
+STEPS TO RUN THE PROJECT
+Requirements:
+selenium (pip install selenium), webdriver_manager, requests, pandas, sqlite3, numpy, plotly
+Instructions:
+0. Set constants in constants.py
+1. Run the parser (python -m scripts.parser):
+- Ensure Chrome WebDriver is installed.
+- Install webdriver-manager:
+pip install webdriver-manager
+- Run parser.py
+2. Clean the data:
+Run data_processing.ipynb(.py) (python -m scripts.data_processing)
+3. Create the database:
+Run database_creation.py
+4. Generate graphs:
+Run the scripts
+- graphs_creation_spotify.py
+- graphs_creation_itunes.py
+- graphs_creation_apple_music.py
+- graphs_creation_radio_youtube.py
+5. Start the Flask app:
+Run flask_app/app.py
+
+RESOURCES
+- kworb.net
+- Plotly documentation
+- Selenium documentation and some tutorials on YouTube

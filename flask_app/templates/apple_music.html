@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAD Music</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 30px;">
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>First graph:</strong> Does the music industry in Europe differ from the global
+            music industry? Somehow yes. This graph is trying to show that. The most popular musicians
+            were taken. Some are popular in Europe, some all over the world, but not in Europe. Does
+            it depend on music genre?
+        </p>
+    </div>
+    <div id="plot" style="width: 80%; height: 600px; margin: auto;"></div>
+    <script>
+        const plotData = {{ graphs[0] | tojson }};
+        Plotly.newPlot('plot', plotData.data, plotData.layout);
+    </script>
+
+    <div style="max-width: 1000px; margin: auto; padding: 15px;">
+        <p style="text-align: left;">
+            <strong>Second graph:</strong> The graph is analyzing the preferences inside the countries
+            more deeply. Each country has its unique top albums rating. For instance, Japan is actively listening
+            to South Korean girl-band fromis-9, and Germany adores rock music (but Rammstein is not in
+            the ranking).
+        </p>
+    </div>
+    <div id="plot2" style="width: 80%; margin: auto; height: 700px;"></div>
+    <script>
+        const plotData2 = {{ graphs[1] | tojson }};
+        Plotly.newPlot('plot2', plotData2.data, plotData2.layout);
+    </script>
+    <a href="/" style="text-decoration: none; color: #555;">⬅ Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,65 @@
+ITUNES (POPULARITY)
+Q: What do the numbers mean?
+A: They show how much each song is selling relative to the #1 song. For example, a value of 0.6782 means the song is selling 67.82% of what the #1 song is selling.
+
+Q: What do the colors mean?
+A: When the popularity values update, the top 90 songs are ranked according to their growth, and then divided into five categories. Dark green songs show the strongest growth, dark red the weakest growth.
+
+Q: Why does your site glitch all the time? Why the incorrect updates?
+A: The popularity values from the iTunes feed fluctuate. Sometimes they go back in time a bit, or other weird stuff happens. My program reads the feed every couple minutes, and these current values are always displayed in the left-most column. You can tell the update is accepted as "real" if there are no question marks in the header. Sometimes fake updates still make it through, so always use your own judgment.
+
+Q: Why aren't there any popularity values for albums?
+A: I don't know, ask Apple.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ITUNES/APPLE MUSIC WW (GLOBAL/EUROPEAN ITUNES CHARTS)
+Q: Are the points a sales estimation?
+A: No, they are not.
+
+Q: Why aren't the points a sales estimation?
+A: The point of the chart is to measure the worldwide popularity of songs and albums. If I were to use the actual market shares, then the US and the UK combined would dwarf all other countries. To me that is not very interesting. If you want sales figures, use sources such as IFPI or Mediatraffic. The points used for this chart have absolutely nothing to do with sales.
+
+Q: Are all versions of a song or album included?
+A: No, only the highest charting version is taken into account. Due to the methodology it's fairer this way, although it does mean that songs with multiple versions are at a disadvantage.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+RADIO
+Q: I'm lost. What do all the columns mean?
+A:
+
+Spins = Number of times the song was played the past week (7 days).
+Spins+ = Change in "Spins" compared to the day before. Another way to explain this is that it's the difference between the number of spins a song received yesterday and the number of spins it received on the same day the week before.
+
+Bullet = Total increase or decrease in spins compared to last week.
+Bullet+ = Change in "Bullet" compared to the day before.
+
+Positive "Bullet", positive "Bullet+" = Song is increasing, and more rapidly than before.
+Positive "Bullet", negative "Bullet+" = Song is increasing, but it's slowing down.
+Negative "Bullet", positive "Bullet+" = Song is decreasing, but not as fast as before.
+Negative "Bullet", negative "Bullet+" = Song is decreasing, even faster than before.
+
+Aud = Audience reached in millions. Each spin is worth a certain audience value, depending on the station and the time of day. It is cumulative, so "100 million" does not necessarily mean that 100 million people have heard it. It could be 5 million people each hearing the song 20 times.
+Aud+ = Change in "Aud" compared to the day before.
+
+Days = Number of days on the chart.
+iTunes = Current US iTunes ranking.
+Pk = All the peak values.
+
+Q: What is the difference between "Published" and "All Stations"? Which one should I be tracking?
+A: "Published" is a selection of stations that best represents the format. "All Stations" is everything. For specific formats, it's better to look at the published panel. Songs are ranked by spins, and certain markets could be over-represented if they have many tiny stations. The published panel filters these out.
+
+Q: What are recurrents?
+A: Songs that have been removed from the chart due to being old. It's to keep the chart fresh.
+
+Q: What is "Overall AI"?
+A: The combined audience a song gets on all formats. The top 50 of each format is used to calculate this, so the estimate can lie a little bit under the "true" value, because the song could be charting outside the top 50 on one or more of the formats.
+
+Q: Where does the data come from?
+A: From All Access, who pull it from Mediabase.
+
+Q: Isn't there an overall AI list that is completely accurate?
+A: Another list is compiled and posted regularly that comes directly from Mediabase. But these values do not include the Latin formats, even though those formats are included in Billboard's airplay charts and the Hot 100. So both lists have their disadvantages. I think my list is more useful for the songs with the most airplay.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
